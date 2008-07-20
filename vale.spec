@@ -1,4 +1,5 @@
 Summary:	A library for media streaming
+Summary(pl.UTF-8):	Biblioteka obsługująca strumienie multimedialne
 Name:		vale
 Version:	0.0.1
 Release:	1
@@ -7,17 +8,21 @@ Group:		Libraries
 Source0:	http://www.soft-switch.org/downloads/vale/%{name}-%{version}.tgz
 # Source0-md5:	ec4f119a4799b6fcbc6bde71a7ae4599
 URL:		http://www.soft-switch.org/
+BuildRequires:	automake
 BuildRequires:	doxygen
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 A library for media streaming.
 
+%description -l pl.UTF-8
+Biblioteka obsługująca strumienie multimedialne.
+
 %package devel
 Summary:	Header files to develop applications using vale
 Summary(pl.UTF-8):	Pliki nagłówkowe do tworzenia aplikacji używających vale
 Group:		Development/Libraries
-Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header files for the vale library.
@@ -29,7 +34,7 @@ Pliki nagłówkowe dla biblioteki vale.
 Summary:	Static vale library
 Summary(pl.UTF-8):	Statyczna biblioteka vale
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static vale library.
