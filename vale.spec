@@ -1,12 +1,12 @@
 Summary:	A library for media streaming
 Summary(pl.UTF-8):	Biblioteka obsługująca strumienie multimedialne
 Name:		vale
-Version:	0.0.1
+Version:	0.0.2
 Release:	1
 License:	GPL v2+
 Group:		Libraries
 Source0:	http://www.soft-switch.org/downloads/vale/%{name}-%{version}.tgz
-# Source0-md5:	ec4f119a4799b6fcbc6bde71a7ae4599
+# Source0-md5:	3fb64157abb4ab3cd260e74a7cd599b0
 URL:		http://www.soft-switch.org/
 BuildRequires:	automake
 BuildRequires:	doxygen
@@ -43,7 +43,7 @@ Static vale library.
 Statyczna biblioteka vale.
 
 %prep
-%setup -q
+%setup -q -n vale-0.0.1
 
 %build
 install /usr/share/automake/config.* config
@@ -72,14 +72,16 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS
-%attr(755,root,root) %{_libdir}/lib*.so.*.*
+%attr(755,root,root) %{_libdir}/libvale.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libvale.so.0
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/*.la
-%{_includedir}/*
+%attr(755,root,root) %{_libdir}/libvale.so
+%{_libdir}/libvale.la
+%{_includedir}/vale
+%{_includedir}/vale.h
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libvale.a
